@@ -1,0 +1,16 @@
+* {
+  margin: 0 5px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button, a {
+  cursor: pointer;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
