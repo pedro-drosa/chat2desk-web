@@ -20,7 +20,7 @@ td {
   border-radius: 0.25rem;
 }
 
-td:first-child{
+td:first-child {
   color: var(--text-title);
 }
 

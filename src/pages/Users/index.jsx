@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { api } from '../../services/api';
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { api } from "../../services/api";
 
-import './styles.css';
+import "./styles.css";
 
 export function Users() {
   const location = useLocation();
@@ -15,50 +15,48 @@ export function Users() {
   useEffect(() => {
     async function authenticate() {
       if (!state) {
-        navigate('/');
+        navigate("/");
       }
 
       try {
-        const { data } = await api.get('/users', {
+        const { data } = await api.get("/users", {
           headers: {
             Authorization: `Bearer ${state.token}`,
-          }
+          },
         });
 
         setUsers(data);
-
       } catch (error) {
-        navigate('/');
+        navigate("/");
       }
     }
     authenticate();
   }, [state, navigate]);
 
   return (
-    state &&
-    <>
-    <h1>All user registered</h1>
-    <h3>Authenticated as: { state.user.name }</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>User</th>
-          <th>E-mail</th>
-        </tr>
-      </thead>
-      <tbody>
-        {
-          users.map((user, index) => {
-            return (
-              <tr key={index}>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-              </tr>
-            )
-          })
-        }
-      </tbody>
-    </table>
-    </>
-  )
+    state && (
+      <>
+        <h1>All user registered</h1>
+        <h3>Authenticated as: {state.user.name}</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>E-mail</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.map((user, index) => {
+              return (
+                <tr key={index}>
+                  <td>{user.name}</td>
+                  <td>{user.email}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </>
+    )
+  );
 }

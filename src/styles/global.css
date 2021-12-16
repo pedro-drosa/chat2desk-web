@@ -8,10 +8,10 @@
   --background: #f8f2f5;
   --red: #e52e4d;
   --green: #33cc95;
-  --blue:#5429cc;
-  --blue-light:#6933ff;
+  --blue: #5429cc;
+  --blue-light: #6933ff;
   --text-title: #363f5f;
-  --text-body:#969cb3;
+  --text-body: #969cb3;
   --shape: #ffffff;
 }
 
@@ -20,12 +20,16 @@ a {
   font-size: 1.2em;
 }
 
-h1, h3, a, p {
+h1,
+h3,
+a,
+p {
   color: var(--text-title);
   text-align: center;
 }
 
-button, a {
+button,
+a {
   cursor: pointer;
 }
 
@@ -57,7 +61,8 @@ label {
   display: none;
 }
 
-input, button {
+input,
+button {
   font-size: 1rem;
   padding: 1rem;
   margin: 0.5rem 0;
